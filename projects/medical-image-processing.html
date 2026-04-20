@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/project.css">
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1 id="project-title">Titre du projet</h1>
+      <p id="project-subtitle">Sous‑titre du projet</p>
+      <div class="rune-line">✦ ✦ ✦</div>
+    </header>
+
+    <main id="project-content">
+      <div class="section-title">Résumé</div>
+      <div class="about-card" style="margin-bottom:18px;">
+        <p id="project-short" class="muted">Résumé du projet (injection automatique depuis projects.json)</p>
+      </div>
+
+      <div class="section-title">Problématique</div>
+      <div class="features-grid" style="margin-bottom:24px;">
+        <ul class="container">En radiothérapie, l'objectif est de détecter et localiser une tumeur pour l'irradier tout en préservant les tissus sains environnants.
+          Or, entre deux sessions de traitement ou entre deux modalités d'imagerie, la position des organes peut varier légèrement.<br/>
+          Le recalage d'images permet de compenser ces déformations et d'assurer un ciblage cohérent d'une séance à l'autre.
+        </ul>
+      </div>
+
+      <div class="section-title">Approche technique</div>
+      <div class="features-grid" style="margin-bottom:24px;">
+        <ul class="container">
+          <li>Implémentation en <b>MATLAB</b> d'algorithmes de recalage d'images médicales.</li>
+          <li>Approche rigide : transformation géométrique (translation, rotation) basée sur des points de contrôle anatomiques.</li>
+          <li>Approche déformable : champ de déformation dense pour compenser les mouvements non rigides des organes mous.</li>
+          <li>Métriques de similarité : corrélation croisée normalisée, information mutuelle.</li>
+          <li>Évaluation quantitative des résultats sur des images IRM cérébrales.</li>
+        </ul>
+      </div>
+
+      <div class="section-title">Bilan</div>
+      <div class="features-grid" style="margin-bottom:24px;">
+        <ul class="container">
+          Ce projet constitue le fondement de ma double compétence en traitement du signal et en algorithmique; une base qui a nourri mon parcours ultérieur dans les systèmes temps réel, la vision par ordinateur <b>(emguCV, OpenCV)</b> et le développement de logiciels techniques.
+        </ul>
+      </div>
+
+      <ul class="container" style="margin-bottom:18px;">
+        Lien: 
+        <a href="https://github.com/RymOUENZAR/Medical-Image-Processing">Github</a><br/>
+      </ul>
+
+      <div class="section-title">Tech & outils</div>
+      <div id="project-tags" class="tech-badges" style="margin-bottom:24px;">
+        <!-- tags injectés ici -->
+      </div>
+
+      <a class="contact-link" href="../index.html">← Retour</a>
+    </main>
+
+    <footer>
+      <!-- injecté par SITE_CONFIG.footer dans scripts.js -->
+    </footer>
+  </div>
+
+  <div id="project-root" style="display:none"></div>
+  <script src="../js/config.js" defer></script>
+  <script src="../js/utils.js" defer></script>
+  <script src="../js/nav.js" defer></script>
+  <script src="../js/data.js" defer></script>
+  <script src="../js/project.js" defer></script>
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

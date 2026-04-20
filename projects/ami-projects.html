@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/project.css">
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1 id="project-title">Titre du projet</h1>
+      <p id="project-subtitle">Sous‑titre du projet</p>
+      <div class="rune-line">✦ ✦ ✦</div>
+    </header>
+
+    <main id="project-content">
+      <div class="section-title">Résumé</div>
+      <div class="about-card" style="margin-bottom:18px;">
+        <p class="muted"><b>Magnetic Interaction - ami</b>, anciennement <b>ISKN</b>, est une entreprise qui crée les tablettes graphiques <i>Repaper</i>.<br/>Dotée d'une technologie différente des autres entreprise du même secteur, elle espère s'élargir vers des domaines autre que l'art.<br/>C'est en cela que j'interviens en réalisant des prototypes afin d'utiliser toutes les capacités de la tablette graphique dans des contextes différents de ceux habituels.</p>
+      </div>
+
+      <div class="section-title">Rôle</div>
+      <div class="features-grid" style="margin-bottom:24px;">
+        <ul class="container">J'ai été embauchée en tant que <b>développeuse polyvalente</b>.</ul>
+      </div>
+      <div class="section-title">Responsabilités</div>
+      <div class="features-grid" style="margin-bottom:24px;">
+        <ul class="container">
+          <li>Aider à l’enrichissement de l’API et le SDK de nouvelles fonctionnalités en intégrant de nouveaux blocs de communication sur le protocole existant, à partir de spécifications fournies et en utilisant des processus établis.</li>
+          <li>Participer à l’investigation et à la résolution de bugs remontés.</li>
+          <li>Aider à démontrer la faisabilité de cas d’usage exprimés en exploitant le kit de développement produit sur Unity.</li>
+          <li>Adapter les développements pour les rendre partageables aux développeurs clients dans l’objectif de minimiser le temps d’apprentissage.</li>
+          <li>Participer aux points de partages avec les développeurs extérieurs et en synthétiser le retour afin d’améliorer la qualité des produits existants.</li>
+        </ul>
+      </div>
+
+      <div class="section-title">Projets</div>
+      <span class="section-subtitle">Learning Companion</span>
+      <ul class="container" style="margin-bottom:18px;">
+        Learning Companion est un quiz ludique et interactif en 3D, ayant comme compagnon la figurine qui interagit avec l’élève pour l’aider à répondre aux questions. <br/>
+        Pour y jouer, il faut avoir la tablette Repaper et la figurine aimantée représentant le compagnon.<br/>
+      </ul>
+
+      <video controls width="400" src="MCQ.mp4" type="video/mp4" alt="Vidéo de démonstration du projet Learning Companion">
+        Votre navigateur ne supporte pas HTML video.
+      </video>
+
+      <span class="section-subtitle">Hangman</span>
+      <ul class="container" style="margin-bottom:18px;">
+        Le jeu du pendu est un jeu assez connu, le but de ce prototype était de pouvoir montrer que cela est possible de réaliser un jeu avec reconnaissance d'écriture sur Unity
+        Pour le tester, il faut avoir à disposition la tablette Repaper et un stylot (Stylus ou Crayon avec bague Repaper).<br/>
+      </ul>
+      <video controls width="500" src="Hangman.mp4" type="video/mp4" alt="Vidéo de démonstratition du projet Hangman">
+        Votre navigateur ne supporte pas HTML video.
+      </video>
+
+      <span class="section-subtitle">XR Repader</span>
+      <ul class="container" style="margin-bottom:18px;">
+        La démo XR Repader est un prototype permettant le tracking de la tablette Repaper en VR pour imiter le comportement d’une tablette numérique grâce au Vive Tracker. <br/>
+        Pour cette démo, il faudrait avoir à disposition la tablette Repaper, le Pen3D ou le stylus Repaper, un casque de réalité virtuel et un mode de tracking de la tablette (Pour cette démo, j'ai utilisé le casque Vive Pro et le Vive tracker).<br/>
+        <br/>
+        Le but de cette démo est de retrouver le comportement d'une tablette numérique dans la VR. On retrouvera donc un OS, avec des widgets et applications. Chaque application a une fonctionnalité bien définie. <br/>
+        Tout peut se faire avec la tablette : intéraction avec les objets, et même la téléportation. Ce qui permet d'éviter de switcher entre les manettes et la tablette à chaque fois.
+      </ul>
+      <div class="carrousel-container" id="carrousel">
+        <div class="carrousel-slide"><img class="nohover" style="transform: scale(1.1);" src="VR_board.png" alt="Représentation de la tablette"></div>
+        <div class="carrousel-slide"><img class="nohover" style="transform: scale(1.1);"  src="VR_objects_interaction.png" alt="Interaction avec les objets"></div>
+        <div class="carrousel-slide"><img class="nohover" style="transform: scale(1.1);" src="VR_teleport.png" alt="Téléportation"></div>
+        <div class="carrousel-slide"><img class="nohover" style="transform: scale(1.1);" src="VR_informations.png" alt="Informations contextuelles"></div>
+        <div class="carrousel-slide"><img class="nohover" style="transform: scale(1.1);" src="VR_sketchpad.png" alt="Prise de note"></div>
+
+        <button class="carrousel-button prev" aria-label="Précédent" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="carrousel-button next" aria-label="Suivant" onclick="plusDivs(1)">&#10095;</button>
+      </div>
+
+      <div class="section-title">Tech & outils</div>
+      <div id="project-tags" class="tech-badges" style="margin-bottom:24px;">
+        <!-- tags injectés ici -->
+      </div>
+
+      <a class="contact-link" href="../index.html">← Retour</a>
+    </main>
+
+    <footer>
+      <!-- injecté par SITE_CONFIG.footer dans scripts.js -->
+    </footer>
+  </div>
+
+  <div id="project-root" style="display:none"></div>
+  <script src="../js/config.js" defer></script>
+  <script src="../js/utils.js" defer></script>
+  <script src="../js/nav.js" defer></script>
+  <script src="../js/data.js" defer></script>
+  <script src="../js/project.js" defer></script>
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

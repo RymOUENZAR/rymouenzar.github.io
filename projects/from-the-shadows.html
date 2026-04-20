@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/project.css">
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1 id="project-title">Titre du projet</h1>
+      <p id="project-subtitle">Sous‑titre du projet</p>
+      <div class="rune-line">✦ ✦ ✦</div>
+    </header>
+
+    <main id="project-content">
+      <div class="section-title">Résumé</div>
+      <div class="about-card" style="margin-bottom:18px;">
+        <p id="project-short" class="muted">Résumé du projet (injection automatique depuis projects.json)</p>
+      </div>
+
+      <div class="section-title">Contexte</div>
+      <div class="features-grid" style="margin-bottom:24px;">
+        <ul class="container">Projet de fin d'études réalisé en équipe de 20 personnes — programmeurs,
+          game designers, artistes 3D et sound designers — sur une durée de 4 mois,
+          de janvier à avril 2020.
+        </ul>
+      </div>
+      <div class="section-title">Concept</div>
+      <div class="features-grid" style="margin-bottom:24px;">
+        <ul class="container">Le jeu repose sur une mécanique de coopération asymétrique : l'un des joueurs
+          contrôle un personnage qui crée ou efface des objets de lumières et l'autre contrôle un personnage de l'ombre qui crée ou efface des objets de l'ombre.<br/>
+          Les objets peuvent être des plateformes, des obstacles ou des révélateurs de chemins cachés.
+        </ul>
+      </div>
+      <div class="section-title">Rôle</div>
+      <div class="features-grid" style="margin-bottom:24px;">
+        <ul class="container">J'ai été <b>développeuse gameplay</b> et <b>rendu</b> en <i>C#</i>, <i>CG</i>, <i>HLSL</i> et <i>Shader Graph</i> sous <i>Unity</i>.</ul>
+      </div>
+      <div class="section-title">Responsabilités</div>
+      <div class="features-grid" style="margin-bottom:24px;">
+        <ul class="container">
+          <li>Contribution aux mécaniques d'ombres et d'interaction avec la lumière.</li>
+          <li>Développement d’outils pour les artistes.</li>
+          <li>Contribution aux phases de tests, d’optimisation et des QA des projets.</li>
+        </ul>
+      </div>
+
+      <ul class="container" style="margin-bottom:18px;">
+        Liens: 
+        <a href="https://store.steampowered.com/app/1427210/From_the_Shadows/">Steam</a> <b>·</b> 
+        <a href="https://gamagora.itch.io/from-the-shadows">itch.io</a> <b>·</b>
+        <a href="https://github.com/antoinechedin/from-the-shadows">Github</a>
+      </ul>
+
+      <div class="section-title">Tech & outils</div>
+      <div id="project-tags" class="tech-badges" style="margin-bottom:24px;">
+        <!-- tags injectés ici -->
+      </div>
+
+      <a class="contact-link" href="../index.html">← Retour</a>
+    </main>
+
+    <footer>
+      <!-- injecté par SITE_CONFIG.footer dans scripts.js -->
+    </footer>
+  </div>
+
+  <div id="project-root" style="display:none"></div>
+  <script src="../js/config.js" defer></script>
+  <script src="../js/utils.js" defer></script>
+  <script src="../js/nav.js" defer></script>
+  <script src="../js/data.js" defer></script>
+  <script src="../js/project.js" defer></script>
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

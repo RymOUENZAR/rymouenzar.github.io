@@ -1,241 +1,301 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Rym OUENZAR Portfolio</title>
-        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet"> 
-        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		
-		<style>
-			.zoom {
-				transition: transform .3s; /* Animation */
-				}
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0d0d0f" />
+  <title>Rym OUENZAR — Portfolio</title>
+  <meta name="description" content="Portfolio de Rym OUENZAR — Lead dev, gestion de projet et coordination technique." />
 
-			.zoom:hover {
-				transform: scale(1.05); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-			}
-		</style>
-		
-		<style>
-			.card {
-				box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-				transition: 0.3s;
-				border-radius: 5px;
-				}
+  <!-- Preconnect pour accélérer le chargement des polices -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-			.card:hover {
-				box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-				}
-		</style>
-		
-		<style>
-			.text-color {
-				color: #4d85a5;
-				}
-		</style>
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
 
-		<style>
-			.static {
-				position:absolute;
-				background: white;
-				}
+  <!-- ═══════════════════════════════════════════════════════════
+       NAV STICKY
+       Invisible au départ (transform: translateY(-100%)).
+       Le JS ajoute .visible après 80 px de scroll.
+  ═══════════════════════════════════════════════════════════════ -->
+  <nav class="site-nav" id="site-nav" aria-label="Navigation principale">
+    <div class="nav-inner">
+      <span class="nav-name">Rym OUENZAR</span>
+      <div class="nav-links">
+        <a href="#section-projets" class="nav-link">Projets</a>
+        <a href="#section-stack"   class="nav-link">Stack</a>
+        <a href="#section-contact" class="nav-link">Contact</a>
+      </div>
+    </div>
+  </nav>
 
-.static:hover {
-  opacity:0;
-}
-		</style>
+  <div class="page">
 
-    </head>
+    <!-- ═══════════════════════════════════════════════════════════
+         HERO — Nom, rôle
+         .animate-in + --delay pour l'effet de cascade au chargement.
+    ═══════════════════════════════════════════════════════════════ -->
+    <header class="animate-in" style="--delay: 0ms">
+      <h1>Rym OUENZAR</h1>
+      <p class="page-subtitle">Lead Dev · Gestion de Projet · Coordination Technique</p>
+      <div class="rune-line" aria-hidden="true">✦ ✦ ✦</div>
+    </header>
 
-    <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary pt-5" id="sideNav">
-			<h3 class="py-1 text-color">
-				Rym
-				<span class="text-blue">OUENZAR</span>
-			</h3>
-			<h4 class="text-yellow py-1">
-				Associate Lead Dev
-			</h4>
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">
-                <span class="d-block d-lg-none">Rym OUENZAR</span>
-                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/profile.jpg" alt="" /></span>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://gamagora.itch.io/from-the-shadows">From The Shadows</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://github.com/RymOUENZAR/Parallax">Parallax</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://github.com/AmauryFauvel/robot-game">Robot Infiltration</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://github.com/RymOUENZAR/Augmented-Model-Visit">Augmented Model Visit</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://github.com/RymOUENZAR/Raytracing">Raytracing</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://github.com/RymOUENZAR/Medical-Image-Processing">Medical Image Processing</a></li>
-					<li class="nav-item"><a class="nav-link js-scroll-trigger"></a></li>
-					<div class="social-icons">
-                        <a class="social-icon" href="https://fr.linkedin.com/in/rym-ouenzar-0554a464"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="social-icon" href="https://github.com/RymOUENZAR"><i class="fab fa-github"></i></a>
-						<a class="social-icon" href="assets/doc/CV.pdf"><i class="fa fa-file"></i></a>
-                    </div>
-                </ul>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         GRILLE PRINCIPALE : colonne gauche + aside droit
+    ═══════════════════════════════════════════════════════════════ -->
+    <main class="grid-2">
+
+      <!-- ──────────────────────────────────────
+           COLONNE GAUCHE
+      ─────────────────────────────────────── -->
+      <div>
+
+        <!-- PROFIL ─────────────────────────── -->
+        <section aria-labelledby="profil-title" class="animate-in" style="--delay: 80ms">
+          <div class="section-title" id="profil-title">Profil</div>
+
+          <div class="about-card">
+            <!-- Photo + nom + accroche -->
+            <div class="profil-bandeau">
+              <img
+                src="assets/index/profile.jpg"
+                alt="Photo de Rym OUENZAR"
+                class="avatar nohover"
+                width="96"
+                height="96"
+              />
+              <div class="about-text">
+                <h2>Rym OUENZAR</h2>
+                <p class="muted">
+                  Ingénieure logicielle et lead technique spécialisée en architecture applicative,
+                  développement interactif et coordination d'équipes pluridisciplinaires.
+                </p>
+              </div>
             </div>
-        </nav>
-        <!-- Page Content-->
-        <div class="container-fluid p-0">
-            <!-- Projects-->
-            <section class="resume-section pt-4" id="projects">
-                <div class="resume-section-content">
-                    <h2 class="pt-0">
-                        <span class="text-primary">Projets</span>
-                    </h2>
 
-                    <a href="https://rymouenzar.github.io/albyon-projects" class="card-link text-secondary"><div class="card mb-1 py-4 zoom" style="max-width: 1000px;">
-						<div class="row no-gutters">
-							<div class="col-md-4">
-								<img src="assets/img/Albyon projects/ALBYON-Logo.png" class="card-img ml-2" alt="Albyon projects">
-							</div>
-							<div class="col-md-8">
-								<div class="card-body">
-									<h4 class="card-title text-primary">Projets chez Albyon</h4>
-									<p class="card-text">Projets réalisés chez Albyon</b>.</p>
-									<p class="card-text"><small class="text-muted"><i>Unity, C#, Shader Graph, Unreal Engine, C++, Blueprint, CG, HLSL</i></small></p>
-								</div>
-							</div>
-						</div>
-					</div></a>
+            <!-- Résumé -->
+            <div class="profile-body">
+              <div class="label-text">Résumé</div>
+              <p class="muted">
+                Ancienne développeuse gameplay et lead dev sur des projets R&D immersifs,
+                j'ai acquis une double compétence technique et organisationnelle — de
+                l'analyse des besoins à la supervision d'équipe en Agile.<br/>
+                J'accompagne aujourd'hui des projets à l'intersection du code et de la stratégie produit,
+                avec une appétence particulière pour les expériences interactives, la réalité
+                virtuelle et les architectures solides.
+              </p>
+            </div>
+          </div>
+        </section>
 
-                    <a href="https://rymouenzar.github.io/ami-projects" class="card-link text-secondary"><div class="card mb-1 py-4 zoom" style="max-width: 1000px;">
-						<div class="row no-gutters">
-							<div class="col-md-4">
-								<img src="assets/img/ami projects/AMI_logo.png" class="card-img ml-2" alt="ami projects">
-							</div>
-							<div class="col-md-8">
-								<div class="card-body">
-									<h4 class="card-title text-primary">Projets chez ami</h4>
-									<p class="card-text">Projets réalisés à l'entreprise Advanced Magnetic Interaction</b>.</p>
-									<p class="card-text"><small class="text-muted"><i>Unity, C#, CG, HLSL, Shader Graph, OpenCV, python, C++</i></small></p>
-								</div>
-							</div>
-						</div>
-					</div></a>
 
-                    <a href="https://gamagora.itch.io/from-the-shadows" class="card-link text-secondary"><div class="card mb-1 py-4 zoom" style="max-width: 1000px;">
-						<div class="row no-gutters">
-							<div class="col-md-4">
-								<img src="assets/img/FTS/banner.png" class="card-img ml-2" alt="From The Shadows">
-							</div>
-							<div class="col-md-8">
-								<div class="card-body">
-									<h4 class="card-title text-primary">From the Shadows</h4>
-									<p class="card-text">From the Shadows est un puzzle platformer coopératif réalisé en 4 mois par une équipe de la formation Gamagora pour le <b>Gamagora Game Show 2020</b>.</p>
-									<p class="card-text"><small class="text-muted"><i>Unity, C#, Shader Graph</i></small></p>
-								</div>
-							</div>
-						</div>
-					</div></a>
-					
-					<a href="https://github.com/RymOUENZAR/Parallax" class="card-link text-secondary"><div class="card mb-1 py-4 zoom" style="max-width: 1000px;">
-						<div class="row no-gutters">
-							<div class="col-md-4">
-								<img src="assets/img/Parallax/Prototype.jpg" class="card-img ml-2 static"alt="Parallax">
-								<img src="assets/img/Parallax/Prototype.gif" class="card-img ml-2 active"alt="Parallax">
-							</div>
-							<div class="col-md-8">
-								<div class="card-body">
-									<h4 class="card-title text-primary">Parallax</h4>
-									<p class="card-text">Parallax est un prototype avec effet de perspective 3D grâce à la détection de visage, réalisé en binôme avec la bibliothèque emguCV.<br/><small class="text-muted">(Survolez l'image pour visionner le gif)</small></p>
-									<p class="card-text"><small class="text-muted"><i>Unity, C#, emguCV</i></small></p>
-								</div>
-							</div>
-						</div>
-					</div></a>
-					
-					<a href="https://github.com/RymOUENZAR/robot-game" class="card-link text-secondary"><div class="card mb-1 py-4 zoom" style="max-width: 1000px;">
-						<div class="row no-gutters">
-							<div class="col-md-4">
-								<img src="assets/img/Robot Infiltration/capture.png" class="card-img ml-2" alt="Robot Infiltration">
-							</div>
-							<div class="col-md-8">
-								<div class="card-body">
-									<h4 class="card-title text-primary">Robot Infiltration</h4>
-									<p class="card-text">Robot Infiltration est un prototype d'un jeu platformer d'infiltration en 2D réalisé en 2 jours en trinôme.</p>
-									<p class="card-text"><small class="text-muted"><i>Unity, C#</i></small></p>
-								</div>
-							</div>
-						</div>
-					</div></a>
-					
-					<a href="https://rymouenzar.github.io/Augmented-Model-Visit" class="card-link text-secondary"><div class="card mb-1 py-4 zoom" style="max-width: 1000px;">
-						<div class="row no-gutters">
-							<div class="col-md-4">
-								<img src="assets/img/Augmented Model Visit/capture.jpg" class="card-img ml-2" alt="Augmented Model Visit">
-							</div>
-							<div class="col-md-8">
-								<div class="card-body">
-									<h4 class="card-title text-primary">Augmented Model Visit</h4>
-									<p class="card-text">Conçu pour un hackaton de l'<b>école de l'Anthropocène</b> ayant pour thème l'urbanisme, Augmented Model Visit est une visite virtuelle immersive avec une maquette architecturale réalisée en 5 jours.</p>
-									<p class="card-text"><small class="text-muted"><i>Unity, C#, emguCV</i></small></p>
-								</div>
-							</div>
-						</div>
-					</div></a>
-					
-					<a href="https://github.com/RymOUENZAR/Raytracing" class="card-link text-secondary"><div class="card mb-1 py-4 zoom" style="max-width: 1000px;">
-						<div class="row no-gutters">
-							<div class="col-md-4">
-								<img src="assets/img/Raytracing/result3.png" class="card-img ml-2 static" alt="Raytracing">
-								<img src="assets/img/Raytracing/raytracing.gif" class="card-img ml-2 active" alt="Raytracing">
-							</div>
-							<div class="col-md-8">
-								<div class="card-body">
-									<h4 class="card-title text-primary">Raytracing</h4>
-									<p class="card-text">Moteur de raytracing multithreaded en CPU réalisé dans le cadre de l'université.
-									<br/><small class="text-muted">(Survolez l'image pour visionner le gif)</small></p>
-									<p class="card-text"><small class="text-muted"><i>Visual Studio, C++, SFML</i></small></p>
-								</div>
-							</div>
-						</div>
-					</div></a>
+        <!-- PROJETS ────────────────────────── -->
+        <section
+          id="section-projets"
+          aria-labelledby="projects-title"
+          class="animate-in"
+          style="--delay: 160ms"
+        >
+          <div class="section-title" id="projects-title">Projets</div>
 
-					<a href="https://github.com/RymOUENZAR/Medical-Image-Processing" class="card-link text-secondary"><div class="card mb-1 py-4 zoom" style="max-width: 1000px;">
-						<div class="row no-gutters">
-							<div class="col-md-4">
-								<img src="assets/img/Medical Image Processing/6.png" class="card-img ml-2 static" alt="Medical Image Processing">
-								<img src="assets/img/Medical Image Processing/MIP.gif" class="card-img ml-2 active" alt="Medical Image Processing">
-							</div>
-							<div class="col-md-8">
-								<div class="card-body">
-									<h4 class="card-title text-primary">Medical Image Processing</h4>
-									<p class="card-text">Projet de fin d'études de Master 2 en robotique réalisé en 2013 et intitulé "Mise en correspondance des images médicales pour la radiothérapie des tumeurs".
-									<br/><small class="text-muted">(Survolez l'image pour visionner le gif)</small></p>
-									<p class="card-text"><small class="text-muted"><i>Matlab</i></small></p>
-								</div>
-							</div>
-						</div>
-					</div></a>
-					
-                </div>
-            </section>
-            <hr class="m-0" />
-		</div>	
-		<div class="text-xl-center"><h6>2020 v 1.0</h6></div>
-            
-        <!-- Bootstrap core JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
+          <!--
+            Barre de filtre : masquée par défaut (hidden).
+            Le JS retire l'attribut hidden et remplit #active-tag
+            quand un filtre est actif.
+          -->
+          <div id="filter-bar" class="filter-bar" hidden>
+            <div class="filter-bar-inner">
+              <span class="filter-label">Filtre actif :</span>
+              <code id="active-tag" class="filter-tag"></code>
+              <button id="clear-filter" class="contact-link btn-clear" type="button">
+                Effacer ✕
+              </button>
+            </div>
+          </div>
+
+          <!-- Grille injectée par scripts.js depuis data/projects.json -->
+          <div
+            id="projects"
+            class="project-grid"
+            aria-live="polite"
+            aria-label="Liste des projets"
+          ></div>
+        </section>
+
+
+        <!-- STACK TECHNIQUE ────────────────── -->
+        <section
+          id="section-stack"
+          aria-labelledby="stack-title"
+          class="animate-in"
+          style="--delay: 240ms"
+        >
+          <div class="section-title" id="stack-title">Stack Technique</div>
+
+          <div class="about-card">
+            <!--
+              Liste des technologies extraites de projects.json.
+              Chaque pill est un filtre cliquable (tag-link).
+            -->
+            <div class="tech-list" id="tech-list"></div>
+            <p class="stack-note">J'aime combiner architecture solide et expérience utilisateur soignée.</p>
+          </div>
+        </section>
+
+      </div>
+      <!-- /colonne gauche -->
+
+
+      <!-- ──────────────────────────────────────
+           ASIDE — Contact + Liens rapides
+      ─────────────────────────────────────── -->
+      <aside
+        id="section-contact"
+        class="animate-in"
+        style="--delay: 120ms"
+      >
+
+        <!-- CV DOWNLOAD ──────────────────── -->
+        <div class="section-title">CV</div>
+        <a
+          class="cv-download-btn"
+          href="assets/cv/Rym_OUENZAR_CV.pdf"
+          download
+          aria-label="Télécharger le CV de Rym OUENZAR (PDF)"
+        >
+          <span class="cv-btn-icon" aria-hidden="true">
+            <img src="assets/index/icon-cv.svg" alt="" width="22" height="22" class="nohover" style="border:none;border-radius:0;" />
+          </span>
+          <span class="cv-btn-text">
+            <span class="cv-btn-label">Télécharger le CV</span>
+            <span class="cv-btn-sub">PDF · Rym OUENZAR</span>
+          </span>
+          <span class="cv-btn-arrow" aria-hidden="true">↓</span>
+        </a>
+
+        <div class="spacer-sm"></div>
+
+        <!-- CONTACT ──────────────────────── -->
+        <div class="section-title">Contact</div>
+        <div class="contact-card">
+          <div class="contact-list">
+
+            <div class="contact-item">
+              <img
+                src="assets/index/icon-email.svg"
+                alt="" aria-hidden="true"
+                class="contact-svg-icon nohover"
+                width="18" height="18"
+              />
+              <strong>Email</strong>
+              <a class="contact-link" href="mailto:ouenzar.rym@gmail.com">
+                ouenzar.rym@gmail.com
+              </a>
+            </div>
+
+            <div class="contact-item">
+              <img
+                src="assets/index/icon-github.svg"
+                alt="" aria-hidden="true"
+                class="contact-svg-icon nohover"
+                width="18" height="18"
+              />
+              <strong>GitHub</strong>
+              <a
+                class="contact-link"
+                href="https://github.com/rymouenzar"
+                target="_blank"
+                rel="noopener noreferrer"
+              >github.com/rymouenzar</a>
+            </div>
+
+            <div class="contact-item">
+              <img
+                src="assets/index/icon-linkedin.svg"
+                alt="" aria-hidden="true"
+                class="contact-svg-icon nohover"
+                width="18" height="18"
+              />
+              <strong>LinkedIn</strong>
+              <!-- TODO : vérifier l'URL LinkedIn -->
+              <a
+                class="contact-link"
+                href="https://www.linkedin.com/in/rym-ouenzar-0554a464/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >rym-ouenzar</a>
+            </div>
+
+            <div class="contact-item">
+              <img
+                src="assets/index/icon-portfolio.svg"
+                alt="" aria-hidden="true"
+                class="contact-svg-icon nohover"
+                width="18" height="18"
+              />
+              <strong>Portfolio</strong>
+              <a
+                class="contact-link"
+                href="https://rymouenzar.github.io/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >rymouenzar.github.io</a>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="spacer-sm"></div>
+
+        <!-- LIENS RAPIDES ────────────────── -->
+        <div class="section-title">Projets phares</div>
+        <div class="contact-card">
+          <div class="quick-links">
+            <a class="quick-link" href="projects/dnd-companion.html">
+              <span class="quick-link-icon" aria-hidden="true">🎲</span>
+              DnD Companion
+            </a>
+            <a class="quick-link" href="projects/from-the-shadows.html">
+              <span class="quick-link-icon" aria-hidden="true">🌑</span>
+              From The Shadows
+            </a>
+            <a class="quick-link" href="projects/albyon-projects.html">
+              <span class="quick-link-icon" aria-hidden="true">⚔</span>
+              Albyon
+            </a>
+            <a class="quick-link" href="projects/ami-projects.html">
+              <span class="quick-link-icon" aria-hidden="true">🥽</span>
+              AMI — Réalité Virtuelle
+            </a>
+          </div>
+        </div>
+
+      </aside>
+      <!-- /aside -->
+
+    </main>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+         FOOTER
+    ═══════════════════════════════════════════════════════════════ -->
+    <footer>
+      <!-- injecté par SITE_CONFIG.footer dans scripts.js -->
+    </footer>
+
+  </div><!-- /page -->
+
+  <script src="js/config.js" defer></script>
+  <script src="js/utils.js" defer></script>
+  <script src="js/nav.js" defer></script>
+  <script src="js/data.js" defer></script>
+  <script src="js/tags-scroll.js" defer></script>
+  <script src="js/index.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
 </html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/project.css">
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1 id="project-title">Titre du projet</h1>
+      <p id="project-subtitle">Sous‑titre du projet</p>
+      <div class="rune-line">✦ ✦ ✦</div>
+    </header>
+
+    <main id="project-content">
+      <div class="section-title">Résumé</div>
+      <div class="about-card" style="margin-bottom:18px;">
+        <p class="muted">Comment visiter un bâtiment qui n'est pas encore construit ? C'est la question à laquelle ce projet (réalisé en binôme) propose une réponse. Grâce à notre dispositif, le public peut se déplacer virtuellement dans le modèle 3D d'un édifice grâce à un contrôle intuitif : la maquette architecurale de ce bâtiment.<br/><br/>
+          L'école urbaine de Lyon a organisé une semaine d'ateliers, débats et conférences autours de l'urbanisme : <strong>l'École de l'Anthropocène</strong>. Pendant toute la durée de cette semaine se déroulait un hackathon regroupant des étudiants et chercheurs de divers cursus (architecture, urbanisme, géographie, data science et jeux-vidéo). Le but était de proposer une expérience basée sur la maquette architecturale d'un futur bâtiment du campus de Bron afin de communiquer sur le projet.
+        </p>
+      </div>
+
+      <a href="#tech" class="skip-button" aria-label="Aller à la partie technique">
+        <svg viewBox="0 0 16 16" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd"  d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 5a.5.5 0 0 0-1 0v4.793L5.354 7.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 9.793V5z"/></svg>
+        <span>Aller directement à la partie technique</span>
+      </a>
+
+      <div class="section-title">Principe de la maquette augmentée</div>
+      <ul class="container" style="margin-bottom:18px;">
+        La maquette a un toit plat et blanc, sur lequel nous projettons le plan d'un étage meublé. Sur ce toit est disposé un marqueur coloré, que l'utilisateur est invité à déplacer àa sa guise. À côte se trouve un grand écran montrant une vue 3D de l'intérieur du bâtiment, à l'endroit correspondant au positionnement du marqueur.
+      </ul>
+      <video controls width="300" src="video.mp4" type="video/mp4" alt="Vidéo de démonstration de la maquette augmentée en utilisation">
+        Votre navigateur ne supporte pas HTML video.
+        <img src="capture.jpg" class="img-fluid border border-dark rounded"/>
+      </video>
+
+      <div id="tech" class="section-title">Partie technique</div>
+      <ul class="container" style="margin-bottom:18px;">
+        Deux appareils sont fixés au dessus de la maquette : un projecteur pour afficher le plan d'un étage sur le dessus de la maquette, et une caméra pour capturer la position du marqueur.<br/><br/>
+        Pour détecter le marqueur et sa position, nous utilisons la bibliothèque EmguCV : un wrapper d'OpenCV pour C# (dont Unity). Le contour du marqueur est repéré grâce à une détection de seuil HSV. La position du centre est ensuite transformée vers le système de coordonnées de Unity avec une matrice de projection et un changement de repère. Enfin, la caméra est déplacée fluidement (interpolation linéaire) vers sa nouvelle position pour correspondre à l'emplacement du marqueur.<br/><br/>
+        Travaillant avec un temps et des ressources limitées, le seul modèle 3D du bâtiment auquel nous avions accès n'avait pas de texture, et des normales parallèles rendant le visuel peu lisible. Nous avons donc choisi de lui appliquer un shader affichant le contours des polygones. Le rendu est peu réaliste mais rend le bâtiment lisible, et ça a renforcé le côté "maquette".
+      </ul>
+      <img src="schema_projet.jpg" style="max-width:75%;" alt="Schéma du dispositif"/>
+
+      <div class="section-title">Tech & outils</div>
+      <div id="project-tags" class="tech-badges" style="margin-bottom:24px;">
+        <!-- tags injectés ici -->
+      </div>
+
+      <a class="contact-link" href="../index.html">← Retour</a>
+    </main>
+
+    <footer>
+      <!-- injecté par SITE_CONFIG.footer dans scripts.js -->
+    </footer>
+  </div>
+
+  <div id="project-root" style="display:none"></div>
+  <script src="../js/config.js" defer></script>
+  <script src="../js/utils.js" defer></script>
+  <script src="../js/nav.js" defer></script>
+  <script src="../js/data.js" defer></script>
+  <script src="../js/project.js" defer></script>
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

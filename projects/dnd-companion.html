@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/project.css">
+</head>
+<body>
+  <div class="page">
+    <!-- HEADER -->
+    <header>
+      <h1 id="project-title">Titre du projet</h1>
+      <p id="project-subtitle">Sous‑titre du projet</p>
+      <div class="rune-line">✦ ✦ ✦</div>
+    </header>
+
+    <main id="project-content">
+      <div class="section-title">Résumé</div>
+      <div class="about-card" style="margin-bottom:18px;">
+        <p id="project-short" class="muted">Résumé du projet (injection automatique depuis projects.json)</p>
+      </div>
+
+      <!-- ARCHITECTURE LAYERS -->
+      <div class="section-title">Architecture en Couches (Clean Architecture)</div>
+      <div class="arch-stack">
+
+        <!-- UI Layer -->
+        <div class="layer layer-ui">
+            <div class="layer-label">🎨<br>UI Layer<br><small style="font-size:9px;opacity:0.7">Compose</small></div>
+            <div class="layer-content">
+                <span class="chip"><span class="chip-icon">👤</span>CharacterScreen</span>
+                <span class="chip"><span class="chip-icon">📋</span>CharacterDetailScreen</span>
+                <span class="chip"><span class="chip-icon">⚡</span>CharacterAbilityScreen</span>
+                <span class="chip"><span class="chip-icon">✨</span>CharacterSpellScreen</span>
+                <span class="chip"><span class="chip-icon">🎲</span>DiceRollerScreen</span>
+                <span class="chip"><span class="chip-icon">🎒</span>InventoryScreen</span>
+                <span class="chip"><span class="chip-icon">📖</span>SpellbookScreen</span>
+                <span class="chip"><span class="chip-icon">🔧</span>CustomCreatorScreen</span>
+            </div>
+        </div>
+
+        <div class="connector">↕</div>
+
+        <!-- ViewModel Layer -->
+        <div class="layer layer-vm">
+            <div class="layer-label">🧠<br>ViewModels<br><small style="font-size:9px;opacity:0.7">StateFlow</small></div>
+            <div class="layer-content">
+                <span class="chip"><span class="chip-icon">@HiltVM</span>CharacterViewModel</span>
+                <span class="chip"><span class="chip-icon">@HiltVM</span>CharacterSpellViewModel</span>
+                <span class="chip"><span class="chip-icon">@HiltVM</span>InventoryViewModel</span>
+                <span class="chip"><span class="chip-icon">🔗</span>SpellHolder (singleton)</span>
+            </div>
+        </div>
+
+        <div class="connector">↕</div>
+
+        <!-- Domain Layer -->
+        <div class="layer layer-dom">
+            <div class="layer-label">🏛<br>Domain<br><small style="font-size:9px;opacity:0.7">Models</small></div>
+            <div class="layer-content">
+                <span class="chip">Character</span>
+                <span class="chip">InventoryItem</span>
+                <span class="chip">Spell / CharacterSpell</span>
+                <span class="chip">SpellSlotState</span>
+                <span class="chip">Skill / SavingThrow</span>
+                <span class="chip">Condition</span>
+                <span class="chip">CharacterFeature</span>
+                <span class="chip">ArmorTemplate (SRD)</span>
+            </div>
+        </div>
+
+        <div class="connector">↕</div>
+
+        <!-- Repository Layer -->
+        <div class="layer layer-repo">
+            <div class="layer-label">🔀<br>Repositories<br><small style="font-size:9px;opacity:0.7">@Singleton</small></div>
+            <div class="layer-content">
+                <span class="chip">CharacterRepository</span>
+                <span class="chip">SpellRepository</span>
+                <span class="chip">InventoryRepository</span>
+                <span class="chip">CharacterSpellRepository</span>
+            </div>
+        </div>
+
+        <div class="connector">↕</div>
+
+        <!-- Data Layer -->
+        <div class="layer layer-data">
+          <div class="layer-label">🗄<br>Data<br><small style="font-size:9px;opacity:0.7">Room + API</small></div>
+          <div class="layer-content">
+            <span class="chip">Room DB (v7)</span>
+            <span class="chip">CharacterDao</span>
+            <span class="chip">InventoryDao</span>
+            <span class="chip">CharacterSpellDao</span>
+            <span class="chip">SpellSlotDao</span>
+            <span class="chip">Retrofit · dnd5eapi.co</span>
+            <span class="chip">SpellTranslator (FR)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- NAVIGATION -->
+      <div class="section-title">Navigation (NavGraph)</div>
+      <div class="nav-diagram">
+        <div class="nav-grid">
+          <div class="nav-section">
+            <div class="nav-section-title">
+              <div class="nav-dot" style="background:#c084fc"></div>
+              <span style="color:#c084fc">Onglet Personnages</span>
+            </div>
+            <div class="tab-item">
+              <span class="tab-icon">👥</span> Liste des personnages
+            </div>
+            <div class="sub-screens">
+              <div class="sub-item">Créer / Modifier</div>
+              <div class="sub-item">Fiche détail</div>
+              <div class="sub-item">→ Inventaire</div>
+              <div class="sub-item">→ Sorts du personnage</div>
+              <div class="sub-item">→ Compétences / Aptitudes</div>
+            </div>
+          </div>
+
+          <div class="nav-section">
+            <div class="nav-section-title">
+              <div class="nav-dot" style="background:#6ee7b7"></div>
+              <span style="color:#6ee7b7">Onglet Grimoire</span>
+            </div>
+            <div class="tab-item">
+              <span class="tab-icon">📚</span> Grimoire global SRD
+            </div>
+            <div class="sub-screens">
+              <div class="sub-item">Filtre par classe</div>
+              <div class="sub-item">Filtre par niveau</div>
+              <div class="sub-item">Filtre par source</div>
+              <div class="sub-item">Détail d'un sort</div>
+              <div class="sub-item">Créer sort maison</div>
+            </div>
+          </div>
+
+          <div class="nav-section">
+            <div class="nav-section-title">
+              <div class="nav-dot" style="background:#fcd34d"></div>
+              <span style="color:#fcd34d">Onglet Dés</span>
+            </div>
+            <div class="tab-item">
+                <span class="tab-icon">🎲</span> Lanceur de dés
+            </div>
+            <div class="sub-screens">
+              <div class="sub-item">d4 / d6 / d8 / d10</div>
+              <div class="sub-item">d12 / d20 / d100</div>
+              <div class="sub-item">Modificateur + count</div>
+              <div class="sub-item">Historique (20 lancers)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ornament">✦ ✦ ✦</div>
+
+      <!-- FEATURES -->
+      <div class="section-title">Fonctionnalités</div>
+      <div class="feats-grid">
+        <div class="feat-card">
+          <div class="feat-header">
+            <div class="feat-icon">👤</div>
+            <div class="feat-title">Personnages</div>
+          </div>
+          <ul class="feat-list">
+            <li>Création/édition personnage (race, classe, sous-classe, caractéristiques)</li>
+            <li>Photo de profil (URI Android)</li>
+            <li>Tracker de PV avec temporaires</li>
+            <li>CA calculée depuis les armures équipées</li>
+            <li>Badge CA dans la liste</li>
+            <li>Sous-classes</li>
+          </ul>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-header">
+            <div class="feat-icon">⚔</div>
+            <div class="feat-title">Inventaire</div>
+          </div>
+          <ul class="feat-list">
+            <li>Catalogue SRD (recherche FR ou EN)</li>
+            <li>Stats d'armure auto-remplies (CA, DEX max, FOR requise, Discrétion)</li>
+            <li>Équipement → recalcul CA persisté en DB</li>
+            <li>Malus affichés sur la fiche (vitesse, discrétion)</li>
+            <li>Poids total calculé</li>
+            <li>Objets maison avec stats manuelles</li>
+          </ul>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-header">
+            <div class="feat-icon">✨</div>
+            <div class="feat-title">Sorts</div>
+          </div>
+          <ul class="feat-list">
+            <li>Import auto par classe</li>
+            <li>Emplacements de sorts avec repos long/court</li>
+            <li>Filtres : niveau, source, Actifs/Préparés/Permanents/Maison/Connus</li>
+            <li>Boutons Préparer et Permanent dans le détail</li>
+            <li>Lancer de dés avec sélection du niveau</li>
+            <li>Scaling sorts mineurs (paliers 5/11/17)</li>
+          </ul>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-header">
+            <div class="feat-icon">📊</div>
+            <div class="feat-title">Compétences & États</div>
+          </div>
+          <ul class="feat-list">
+            <li>18 compétences avec maîtrise et expertise</li>
+            <li>6 jets de sauvegarde avec proficiencies par classe</li>
+            <li>Lancer d20 : résultat brut + bonus + total affiché</li>
+            <li>Critique naturel ⚡ et échec critique 💀</li>
+            <li>18 conditions avec emoji et description</li>
+            <li>Aptitudes de classe via BDD</li>
+          </ul>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-header">
+            <div class="feat-icon">🎲</div>
+            <div class="feat-title">Lanceur de Dés</div>
+          </div>
+          <ul class="feat-list">
+            <li>d4 / d6 / d8 / d10 / d12 / d20 / d100</li>
+            <li>Images PNG nodpi</li>
+            <li>Nombre de dés (1–20) et modificateur</li>
+            <li>Historique 20 lancers, scroll auto vers le dernier</li>
+            <li>Suppression individuelle par lancer</li>
+            <li>Critique naturel ⚡ et échec critique 💀</li>
+          </ul>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-header">
+            <div class="feat-icon">🌐</div>
+            <div class="feat-title">API & Traductions</div>
+          </div>
+          <ul class="feat-list">
+            <li>BDD custom — sorts, classes, équipements</li>
+            <li>Traduction EN→FR : 300+ sorts, armures, équipements</li>
+            <li>Recherche FR→EN</li>
+            <li>Conversion pieds → mètres (5 ft = 1,5 m)</li>
+            <li>Descriptions partiellement traduites</li>
+            <li>Cache offline (Room)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section-title">Visuels</div>
+
+<div class="fxcarousel-wrapper">
+  <div class="fxcarousel" id="carousel-project" style="width: 45%;">
+
+    <div class="fxcarousel-slide" id="characters">
+      <div class="juxtapose">
+        <img src="../assets/dnd-companion/captures/characters_dark.png" />
+        <img src="../assets/dnd-companion/captures/characters_light.png" />
+      </div>
+    </div>
+    
+    <div class="fxcarousel-slide" id="character_detail">
+      <div class="juxtapose">
+        <img src="../assets/dnd-companion/captures/character_detail_dark.png" />
+        <img src="../assets/dnd-companion/captures/character_detail_light.png" />
+      </div>
+    </div>
+    
+    <div class="fxcarousel-slide" id="character_detail2">
+      <div class="juxtapose">
+        <img src="../assets/dnd-companion/captures/character_detail_dark_2.png" />
+        <img src="../assets/dnd-companion/captures/character_detail_light_2.png" />
+      </div>
+    </div>
+
+    <div class="fxcarousel-slide" id="spells">
+      <div class="juxtapose">
+        <img src="../assets/dnd-companion/captures/spells_dark.png" />
+        <img src="../assets/dnd-companion/captures/spells_light.png" />
+      </div>
+    </div>
+
+    <div class="fxcarousel-slide" id="spell">
+      <div class="juxtapose">
+        <img src="../assets/dnd-companion/captures/heal_dark.png" />
+        <img src="../assets/dnd-companion/captures/heal_light.png" />
+      </div>
+    </div>
+
+    <div class="fxcarousel-slide" id="aptitudes">
+      <div class="juxtapose">
+        <img src="../assets/dnd-companion/captures/aptitudes_dark.png" />
+        <img src="../assets/dnd-companion/captures/aptitudes_light.png" />
+      </div>
+    </div>
+
+    <div class="fxcarousel-slide" id="spellbook">
+      <div class="juxtapose">
+        <img src="../assets/dnd-companion/captures/spellbook_dark.png" />
+        <img src="../assets/dnd-companion/captures/spellbook_light.png" />
+      </div>
+    </div>
+
+    <div class="fxcarousel-slide" id="dice">
+      <div class="juxtapose">
+        <img src="../assets/dnd-companion/captures/dice-dark.png" />
+        <img src="../assets/dnd-companion/captures/dice_light.png" />
+      </div>
+    </div>
+
+    <div class="fxcarousel-slide" id="settings">
+      <div class="juxtapose" style="background-color: #000000;">
+        <img src="../assets/dnd-companion/captures/settings_dark.png" />
+        <img src="../assets/dnd-companion/captures/settings_light.png" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Points de navigation — un lien par slide -->
+  <nav class="fxcarousel-nav" aria-label="Navigation du carrousel">
+    <a href="#characters" class="fxcarousel-dot" aria-label="Characters list"></a>
+    <a href="#character_detail" class="fxcarousel-dot" aria-label="Character detail"></a>
+    <a href="#character_detail2" class="fxcarousel-dot" aria-label="Character detail (suite)"></a>
+    <a href="#spells" class="fxcarousel-dot" aria-label="Character spells"></a>
+    <a href="#spell" class="fxcarousel-dot" aria-label="Spell"></a>
+    <a href="#aptitudes" class="fxcarousel-dot" aria-label="Aptitudes"></a>
+    <a href="#spellbook" class="fxcarousel-dot" aria-label="Spellbook"></a>
+    <a href="#dice" class="fxcarousel-dot" aria-label="Dice"></a>
+    <a href="#settings" class="fxcarousel-dot" aria-label="Settings"></a>
+  </nav>
+</div>
+
+      <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
+      <link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css">
+
+      <div class="section-title">Tech & outils</div>
+      <div id="project-tags" class="tech-badges" style="margin-bottom:24px;">
+        <!-- tags injectés ici -->
+      </div>
+      
+      <a class="contact-link" href="../index.html">← Retour</a>
+    </main>
+
+    <footer>
+      <!-- injecté par SITE_CONFIG.footer dans scripts.js -->
+    </footer>
+  </div>
+
+  <div id="project-root" style="display:none"></div>
+  <script src="../js/config.js" defer></script>
+  <script src="../js/utils.js" defer></script>
+  <script src="../js/nav.js" defer></script>
+  <script src="../js/data.js" defer></script>
+  <script src="../js/project.js" defer></script>
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

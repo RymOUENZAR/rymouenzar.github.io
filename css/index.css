@@ -1,0 +1,523 @@
+/* ══════════════════════════════════════════════════════════════════
+   RYMOUENZAR · PORTFOLIO — css/index.css
+   Chargé uniquement sur index.html.
+   ══════════════════════════════════════════════════════════════════ */
+
+
+/* ─────────────────────────────────────────────
+   1. MISE EN PAGE — GRILLE 2 COLONNES
+───────────────────────────────────────────── */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 980px) {
+  .grid-2 { grid-template-columns: 1fr; }
+}
+
+
+/* ─────────────────────────────────────────────
+   2. SECTION PROFIL
+───────────────────────────────────────────── */
+.profil-bandeau {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: var(--r);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  object-fit: cover;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #2b2b2b, #111);
+}
+
+.about-text h2 {
+  font-family: var(--f-display);
+  color: var(--gold);
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.profile-body { margin-top: 14px; }
+
+.label-text {
+  font-size: 11px;
+  color: var(--text-dim);
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  font-family: var(--f-mono);
+  margin-bottom: 6px;
+}
+
+
+/* ─────────────────────────────────────────────
+   3. GRILLE DE PROJETS
+───────────────────────────────────────────── */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+  margin-top: 8px;
+}
+
+
+/* ─────────────────────────────────────────────
+   4. CARTE PROJET
+───────────────────────────────────────────── */
+.project-card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  overflow: hidden;
+  transition: border-color var(--t), transform var(--t-fast);
+}
+
+.project-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-4px);
+}
+
+.project-card:hover .project-icon { border-color: var(--border-hover); }
+
+.project-card:hover::before {
+  opacity: calc(var(--project-bg-opacity, 0) + 0.06);
+}
+
+/* ── Zone haute : image de fond + en-tête ── */
+.project-card-top {
+  position: relative;
+  display: flex;
+  height: 90px;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+}
+
+/*
+  Image de fond appliquée par JS via la variable --project-bg.
+  Opacity à 0 par défaut ; le JS la passe à 0.15 après chargement
+  pour éviter un flash à opacity:1 avant que l'image soit résolue.
+*/
+.project-card-top::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-size:     cover;
+  background-position: center;
+  background-repeat:   no-repeat;
+  pointer-events:      none;
+  transition:          opacity var(--t);
+  z-index:             0;
+}
+
+/* Couche fond uniquement — le contenu reste à pleine opacité */
+.project-card-bg {
+  position: absolute;
+  inset: 0;
+  background-size:     cover;
+  background-position: center;
+  background-repeat:   no-repeat;
+  opacity:             0;
+  pointer-events:      none;
+  z-index:             0;
+  transition:          opacity var(--t);
+}
+
+/* ── Zone basse : description, tags, footer ── */
+.project-card-bottom { padding: 5px 16px 10px; }
+
+
+/* ── En-tête (icône + titre + sous-titre) ── */
+.project-header {
+  padding: 18px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.project-icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(184, 134, 11, 0.06);
+  border: 1px solid rgba(184, 134, 11, 0.12);
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+/* Image SVG/PNG chargée par index.js */
+.project-icon img.project-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border: none;
+  border-radius: 0;
+}
+
+.project-title {
+  font-family: var(--f-display);
+  color: var(--gold);
+  font-size: 14px;
+  letter-spacing: 1.2px;
+}
+
+.project-desc {
+  color: var(--text-muted);
+  font-size: 12px;
+  margin-top: 6px;
+  line-height: 1.55;
+  height: 120px;
+}
+
+
+/* ── Tags dans la carte ── */
+.project-card-tags {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+
+/* ── Pied de carte (date + lien) ── */
+.project-card-separator {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+
+.project-card-link {
+  font-family: var(--f-mono);
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  opacity: 0.55;
+  transition: opacity 0.14s;
+}
+
+.project-card-link:hover { opacity: 1; }
+
+/* Badge date / catégorie */
+.project-card-badge {
+  display: inline-block;
+  font-family: var(--f-mono);
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  max-width: 200px;
+  color: var(--bdgc);
+  background: var(--bdgbg);
+  border: 1px solid var(--bdgbd);
+  border-radius: 4px;
+  padding: 2px 8px;
+  opacity: 0.75;
+}
+
+
+/* ─────────────────────────────────────────────
+   5. STACK TECHNIQUE (pills filtrants)
+───────────────────────────────────────────── */
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.tech-pill {
+  padding: 3px 11px;
+  border-radius: 8px;
+  font-family: var(--f-mono);
+  font-size: 12px;
+  border: 1px solid var(--border);
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.01);
+  text-decoration: none;
+  transition: color var(--t-fast), border-color var(--t-fast), transform var(--t-fast);
+}
+
+.tech-pill:hover {
+  color: var(--text-link);
+  border-color: rgba(252, 211, 77, 0.2);
+  transform: translateY(-1px);
+}
+
+.stack-note {
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-top: 12px;
+}
+
+
+/* ─────────────────────────────────────────────
+   6. BARRE DE FILTRE ACTIF
+───────────────────────────────────────────── */
+.filter-bar {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 11px 16px;
+  margin-bottom: 12px;
+}
+
+.filter-bar[hidden] { display: none; }
+
+.filter-bar-inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.filter-label {
+  font-weight: 700;
+  color: var(--gold);
+  font-size: 13px;
+}
+
+.filter-tag {
+  font-family: var(--f-mono);
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: var(--r-pill);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.btn-clear {
+  margin-left: auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  font-size: 13px;
+  font-family: var(--f-body);
+}
+
+
+/* ─────────────────────────────────────────────
+   7. CONTACT — ASIDE
+───────────────────────────────────────────── */
+.contact-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 20px;
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.contact-item {
+  display: grid;
+  grid-template-columns: 20px 68px 1fr;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.contact-icon {
+  font-size: 13px;
+  opacity: 0.45;
+  text-align: center;
+}
+
+.contact-item strong {
+  color: var(--text);
+  font-weight: 600;
+  min-width: 58px;
+  font-size: 13px;
+}
+
+.contact-item a { text-align: right; }
+
+/* Icônes SVG dans les items de contact */
+.contact-svg-icon {
+  display: block;
+  margin: 0 auto;
+  align-self: center;
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent;
+  flex-shrink: 0;
+  opacity: 0.75;
+  transition: opacity var(--t-fast);
+}
+
+.contact-item:hover .contact-svg-icon { opacity: 1; }
+
+
+/* ─────────────────────────────────────────────
+   8. BOUTON TÉLÉCHARGEMENT CV
+───────────────────────────────────────────── */
+.cv-download-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold-dim);
+  border-radius: var(--r);
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color var(--t), background var(--t), transform var(--t-fast), box-shadow var(--t);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Halo ambiant au repos */
+.cv-download-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 20% 50%, rgba(212, 168, 67, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+  transition: opacity var(--t);
+  opacity: 1;
+}
+
+.cv-download-btn:hover {
+  border-color: var(--gold);
+  border-left-color: var(--gold-bright);
+  background: rgba(212, 168, 67, 0.05);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(184, 134, 11, 0.12);
+}
+
+.cv-download-btn:hover::before { opacity: 1.5; }
+
+.cv-download-btn:focus-visible {
+  outline: 3px solid var(--border-focus);
+  outline-offset: 3px;
+}
+
+/* Conteneur icône */
+.cv-btn-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(184, 134, 11, 0.08);
+  border-radius: 9px;
+  border: 1px solid rgba(184, 134, 11, 0.18);
+  transition: background var(--t), border-color var(--t);
+}
+
+/* Annule le display:block global sur l'img SVG interne */
+.cv-btn-icon img {
+  display: inline-block;
+  margin: 0;
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent;
+}
+
+.cv-download-btn:hover .cv-btn-icon {
+  background: rgba(184, 134, 11, 0.14);
+  border-color: rgba(184, 134, 11, 0.32);
+}
+
+.cv-btn-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.cv-btn-label {
+  font-family: var(--f-display);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.cv-btn-sub {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  color: var(--text-dim);
+  letter-spacing: 0.8px;
+}
+
+.cv-btn-arrow {
+  font-size: 18px;
+  color: var(--gold-dim);
+  opacity: 0.6;
+  transition: opacity var(--t), transform var(--t-fast);
+  flex-shrink: 0;
+}
+
+.cv-download-btn:hover .cv-btn-arrow {
+  opacity: 1;
+  transform: translateY(2px);
+}
+
+
+/* ─────────────────────────────────────────────
+   9. LIENS RAPIDES (projets phares)
+───────────────────────────────────────────── */
+.quick-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.quick-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: var(--r-sm);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 13px;
+  font-family: var(--f-body);
+  transition: border-color var(--t-fast), color var(--t-fast), background var(--t-fast);
+}
+
+.quick-link:hover {
+  border-color: var(--border-hover);
+  color: var(--gold);
+  background: var(--surface-hover);
+}
+
+.quick-link-icon { font-size: 14px; }
+
+
+/* ─────────────────────────────────────────────
+   10. RESPONSIVE INDEX
+───────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .profil-bandeau { flex-direction: column; align-items: flex-start; }
+  .avatar     { width: 72px; height: 72px; }
+}

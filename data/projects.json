@@ -1,0 +1,101 @@
+[
+  {
+    "slug": "dnd-companion",
+    "title": "D&D Companion",
+    "subtitle": "Application android de gestion de personnages pour Donjons & Dragons",
+    "short": "App android de gestion de personnages pour <b>Donjons & Dragons</b> 5<sup>ème</sup> édition, avec design system et prototype Jetpack Compose, Room et traduction FR.",
+    "tags": ["Kotlin","Compose","Room","Android","Base de données","Scraping","MVVM"],
+    "icon": "assets/dnd-companion/dnd-logo.png",
+    "image": "dnd-logo2.png",
+    "year": "2026",
+    "repo": "https://github.com/RymOUENZAR/DnD-Companion"
+  },
+  {
+    "slug": "albyon-projects",
+    "title": "Projets chez Albyon",
+    "subtitle": "Expériences interactives, jeux vidéo et réalité virtuelle",
+    "short": "Projets réalisés à l'entreprise Albyon, spécialisée dans les expériences interactives et la réalité virtuelle.",
+    "tags": ["Unity","C#","Shader Graph","CG","HLSL","Unreal Engine","C++","Blueprint","3D","Jeu","Entreprise"],
+    "icon": "assets/albyon-projects/ALBYON-icon.png",
+    "image": "Albyon-logo.png",
+    "year": "2021 - 2023",
+    "repo": ""
+  },
+  {
+    "slug": "ami-projects",
+    "title": "Projets chez AMI",
+    "subtitle": "Advanced Magnetic Interaction",
+    "short": "Projets réalisés à l'entreprise AMI (<b>Advanced Magnetic Interaction</b>).",
+    "tags": ["Unity","C#","C++","Shader Graph","CG","HLSL","Visual Studio","3D","OpenCV","Réalité virtuelle","Jeu","python","API","SDK","Entreprise"],
+    "icon": "assets/ami-projects/ami-logo-white.png",
+    "image": "mcq-capture.png",
+    "year": "2020 - 2021",
+    "repo": ""
+  },
+  {
+    "slug": "from-the-shadows",
+    "title": "From The Shadows",
+    "subtitle": "Puzzle platformer — Projet de fin d'études",
+    "short": "From the Shadows est un puzzle platformer coopératif en 3D réalisé dans le cadre du Master Professionnel Développement de Jeux Vidéo. Le jeu a été présenté au <b>Gamagora Game Show 2020</b>.",
+    "tags": ["Unity","C#", "CG", "HLSL", "Shader Graph","Visual Studio","3D","Jeu","Université"],
+    "icon": "assets/from-the-shadows/FTS-Logo.png",
+    "image": "cover.png",
+    "year": "2020",
+    "repo": "https://github.com/antoinechedin/from-the-shadows"
+  },
+  {
+    "slug": "parallax",
+    "title": "Parallax",
+    "subtitle": "Prototype — Effet de parallaxe 3D par détection de visage",
+    "short": "Parallax est un prototype Unity explorant la <b>perspective 3D dynamique</b> via la détection faciale en temps réel. La caméra virtuelle se déplace en fonction de la position de la tête de l'utilisateur, créant une illusion de profondeur sans casque VR.",
+    "tags": ["Unity","C#","Visual Studio","emguCV","3D","Université"],
+    "icon": "🌄",
+    "image": "Prototype.gif",
+    "year": "2020",
+    "repo": "https://github.com/RymOUENZAR/Parallax"
+  },
+  {
+    "slug": "robot-infiltration",
+    "title": "Robot Infiltration",
+    "subtitle": "Prototype — Jeu de platformer infiltration 2D",
+    "short": "Robot Infiltration est un prototype de jeu d'<b>infiltration 2D en side-scrolling</b> réalisé en <b>2 jours</b> en trinôme dans le cadre d'un projet universitaire à Gamagora. Un personnage doit traverser des niveaux gardés sans se faire détecter.",
+    "tags": ["Unity","C#","Visual Studio","Jeu","2D","Université"],
+    "icon": "🎮",
+    "image": "capture.png",
+    "year": "2020",
+    "repo": "https://github.com/RymOUENZAR/robot-game"
+  },
+  {
+    "slug": "augmented-model-visit",
+    "title": "Augmented Model Visit",
+    "subtitle": "Projet hackaton",
+    "short": "Conçu pour un hackaton de l'<b>école de l'Anthropocène</b> ayant pour thème l'urbanisme, Augmented Model Visit est une visite virtuelle immersive avec une maquette architecturale réalisée en 5 jours.",
+    "tags": ["Unity","C#","Visual Studio","emguCV","3D","maquette","Université"],
+    "icon": "🏘️",
+    "image": "capture.jpg",
+    "year": "2019",
+    "repo": "https://github.com/RymOUENZAR/Augmented-Model-Visit"
+  },
+  {
+    "slug": "raytracing",
+    "title": "Raytracing",
+    "subtitle": "Moteur de rendu CPU multithreadé — Projet universitaire",
+    "short": "Implémentation d'un <b>moteur de raytracing</b> en C++ avec SFML, sur CPU et optimisé via le <b>multithreading</b>.",
+    "tags": ["C++","SFML","Visual Studio"],
+    "icon": "assets/raytracing/result2.png",
+    "image": "result1.png",
+    "year": "2019",
+    "repo": "https://github.com/RymOUENZAR/Raytracing"
+  },
+  {
+    "slug": "medical-image-processing",
+    "title": "Traitement d'Images Médicales",
+    "subtitle": "Projet de fin d'études de Master",
+    "short": "Projet intitulé <b>«&nbsp;Mise en correspondance des images médicales pour la radiothérapie des tumeurs&nbsp;»</b>. Implémente des algorithmes de recalage d'images <i>IRM/Scanner/CT/CBCT</i> pour guider le ciblage tumoral en radiothérapie.",
+    "tags": ["MATLAB","traitement d'images","Santé","imagerie médicale"],
+    "icon": "assets/medical-image-processing/logo.png",
+    "image": "4.png",
+    "year": "2013",
+    "repo": "https://github.com/RymOUENZAR/Medical-Image-Processing"
+  }
+]

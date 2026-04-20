@@ -1,0 +1,512 @@
+/* ══════════════════════════════════════════════════════════════════
+   RYMOUENZAR · PORTFOLIO — css/project.css
+   Chargé uniquement sur les pages de projet.
+   ══════════════════════════════════════════════════════════════════ */
+
+
+/* ─────────────────────────────────────────────
+   1. ENTÊTE DE PAGE — IMAGE DE COUVERTURE
+   L'image est injectée par project.js via la
+   variable CSS --page-cover (définie sur le
+   <header> directement).
+   Le dégradé fond assure la lisibilité du texte
+   et le fondu vers la couleur de page.
+───────────────────────────────────────────── */
+.page > header {
+  position: relative;
+  overflow: hidden;
+
+  /* Débordement hors du padding de .page pour
+     couvrir toute la largeur sans bordure */
+  margin-top:   -48px;
+  margin-left:  -32px;
+  margin-right: -32px;
+
+  /* Padding interne : préserve l'espace pour le texte */
+  padding: 56px 32px 32px;
+}
+
+/* Couverture image via pseudo-élément :
+   séparé du contenu pour que le masque ne
+   s'applique qu'à l'image, pas au texte. */
+.page > header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+
+  /* Double couche : assombrissement + image */
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(13, 13, 15, 0.45)  0%,
+      rgba(13, 13, 15, 0.55) 50%,
+      rgba(13, 13, 15, 1)    75%
+    ),
+    var(--page-cover, none);
+  background-size:     cover, cover;
+  background-position: center 30%, center 30%;
+  background-repeat:   no-repeat;
+
+  /* Fondu : visible en haut, transparent en bas
+     Le texte reste lisible grâce à la couche sombre */
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 40%,
+    transparent 100%
+  );
+  
+  mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 40%,
+    transparent 100%
+  );
+
+  /* Couche sombre par-dessus l'image pour lisibilité */
+  opacity: 0.25;            /* baisse l'intensité globale */
+
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Le contenu textuel reste au-dessus de l'image */
+.page > header > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* La rune-line marque la fin visuelle de l'entête */
+.page > header .rune-line { margin-top: 24px; }
+
+@media (max-width: 640px) {
+  .page > header {
+    margin-top:   -28px;
+    margin-left:  -16px;
+    margin-right: -16px;
+    padding: 40px 16px 28px;
+  }
+}
+
+
+/* ─────────────────────────────────────────────
+   2. CARROUSEL
+───────────────────────────────────────────── */
+.carrousel-container {
+  position: relative;
+  max-width: 600px;
+  max-height: 300px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  transition: transform var(--t);
+}
+
+.carrousel-container:not(.nohover):hover { transform: scale(1.02); }
+
+.carrousel-slide { display: none; }
+
+.carrousel-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: none;
+  border-radius: 0;
+}
+
+.carrousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(49, 37, 6, 0.2);
+  border: 1px solid rgba(201, 150, 22, 0.2);
+  color: rgba(153, 119, 33, 0.6);
+  font-size: 18px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background var(--t-fast), border-color var(--t-fast);
+  z-index: 10;
+}
+
+.carrousel-button.prev { left: 12px; }
+.carrousel-button.next { right: 12px; }
+.carrousel-button:hover {
+  background: rgba(49, 37, 6, 0.3);
+  color: var(--gold-muted);
+}
+
+
+/* ─────────────────────────────────────────────
+   3. BOUTON NAVIGATION (retour / aller à)
+───────────────────────────────────────────── */
+.skip-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background var(--t-fast), border-color var(--t-fast), color var(--t-fast), transform var(--t-fast);
+}
+
+.skip-button svg {
+  width: 1.2em;
+  height: 1.2em;
+  color: var(--gold-muted);
+  fill: currentColor;
+  display: inline-block;
+  vertical-align: middle;
+  transition: color var(--t-fast);
+}
+
+.skip-button:hover,
+.skip-button:active {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(252, 211, 77, 0.2);
+  color: var(--text-link);
+  transform: translateY(-1px);
+}
+
+.skip-button:hover svg { color: var(--gold-dim); }
+
+.skip-button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--border-focus);
+}
+
+
+/* ─────────────────────────────────────────────
+   4. DIAGRAMME D'ARCHITECTURE EN COUCHES
+   Représentation visuelle de la Clean
+   Architecture : UI → ViewModel → Domain
+   → Repository → Data.
+───────────────────────────────────────────── */
+.arch-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 56px;
+}
+
+.layer {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  align-items: stretch;
+  min-height: 70px;
+}
+
+.layer-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 8px;
+  font-family: var(--f-display);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: var(--r-sm) 0 0 var(--r-sm);
+}
+
+.layer-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 10px 14px;
+  align-items: center;
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+  border-left: 2px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Couleurs sémantiques par couche */
+.layer-ui   .layer-label   { background: rgba(147,  51, 234, 0.25); color: #c084fc; border: 1px solid rgba(147,  51, 234, 0.3); }
+.layer-ui   .layer-content { background: rgba(147,  51, 234, 0.08); border-color: rgba(147,  51, 234, 0.2); }
+.layer-vm   .layer-label   { background: rgba( 59, 130, 246, 0.25); color: #93c5fd; border: 1px solid rgba( 59, 130, 246, 0.3); }
+.layer-vm   .layer-content { background: rgba( 59, 130, 246, 0.08); border-color: rgba( 59, 130, 246, 0.2); }
+.layer-dom  .layer-label   { background: rgba( 16, 185, 129, 0.25); color: #6ee7b7; border: 1px solid rgba( 16, 185, 129, 0.3); }
+.layer-dom  .layer-content { background: rgba( 16, 185, 129, 0.08); border-color: rgba( 16, 185, 129, 0.2); }
+.layer-repo .layer-label   { background: rgba(245, 158,  11, 0.25); color: #fcd34d; border: 1px solid rgba(245, 158,  11, 0.3); }
+.layer-repo .layer-content { background: rgba(245, 158,  11, 0.08); border-color: rgba(245, 158,  11, 0.2); }
+.layer-data .layer-label   { background: rgba(239,  68,  68, 0.25); color: #fca5a5; border: 1px solid rgba(239,  68,  68, 0.3); }
+.layer-data .layer-content { background: rgba(239,  68,  68, 0.08); border-color: rgba(239,  68,  68, 0.2); }
+
+/* Chips (pills à l'intérieur des couches) */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-family: var(--f-mono);
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+  border: 1px solid currentColor;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+  cursor: default;
+}
+
+.chip:hover    { opacity: 1; }
+.chip-icon     { font-size: 13px; }
+
+.layer-ui   .chip { color: #c084fc; }
+.layer-vm   .chip { color: #93c5fd; }
+.layer-dom  .chip { color: #6ee7b7; }
+.layer-repo .chip { color: #fcd34d; }
+.layer-data .chip { color: #fca5a5; }
+
+/* Connecteur fléché entre couches */
+.connector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+  color: #4a4040;
+  font-size: 16px;
+  position: relative;
+}
+
+.connector::before {
+  content: '';
+  position: absolute;
+  left: 140px;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.05), transparent);
+}
+
+@media (max-width: 640px) {
+  .layer { grid-template-columns: 100px 1fr; }
+}
+
+
+/* ─────────────────────────────────────────────
+   5. NAVIGATION INTERNE (NavGraph)
+───────────────────────────────────────────── */
+.nav-diagram { margin-bottom: 56px; }
+
+.nav-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.nav-section {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--r);
+  padding: 20px;
+}
+
+.nav-section-title {
+  font-family: var(--f-display);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.tab-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: var(--r-sm);
+  margin-bottom: 4px;
+  font-size: 13px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+}
+
+.tab-icon { font-size: 15px; }
+
+.sub-screens {
+  margin-top: 8px;
+  margin-left: 16px;
+}
+
+.sub-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  font-size: 12px;
+  color: #8a8070;
+  position: relative;
+}
+
+.sub-item::before {
+  content: '└─';
+  font-family: monospace;
+  font-size: 10px;
+  color: #4a4040;
+}
+
+@media (max-width: 640px) {
+  .nav-grid { grid-template-columns: 1fr; }
+}
+
+
+/* ─────────────────────────────────────────────
+   6. GRILLE DE FONCTIONNALITÉS
+───────────────────────────────────────────── */
+.feats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-bottom: 56px;
+}
+
+.feat-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--r);
+  padding: 20px;
+  transition: border-color var(--t);
+}
+
+.feat-card:hover { border-color: var(--border-hover); }
+
+.feat-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.feat-icon {
+  font-size: 24px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(184, 134, 11, 0.1);
+  border-radius: 10px;
+  border: 1px solid rgba(184, 134, 11, 0.2);
+  flex-shrink: 0;
+}
+
+.feat-title {
+  font-family: var(--f-display);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--gold);
+}
+
+.feat-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.feat-list li {
+  font-size: 13px;
+  color: var(--text-muted);
+  padding-left: 14px;
+  position: relative;
+  line-height: 1.55;
+}
+
+/* Losange décoratif devant chaque item */
+.feat-list li::before {
+  content: '◆';
+  position: absolute;
+  left: 0;
+  font-size: 7px;
+  top: 5px;
+  color: var(--gold-dim);
+  opacity: 0.6;
+}
+
+/* ─────────────────────────────────────────────
+   CARROUSEL FLEXBOX (CSS-only)
+   Technique : flex row + overflow-x scroll
+   + scroll-snap-type. Navigation par ancres #id.
+   Aucun JS requis.
+───────────────────────────────────────────── */
+.fxcarousel-wrapper {
+  margin-bottom: 32px;
+}
+
+/* Piste scrollable */
+.fxcarousel {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  border-radius: var(--r);
+  border: 1px solid var(--border);
+  justify-self: center;
+
+  /* Cacher la scrollbar */
+  scrollbar-width: none;
+}
+.fxcarousel::-webkit-scrollbar { display: none; }
+
+/* Chaque slide prend exactement la largeur du conteneur */
+.fxcarousel-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  border-radius: var(--r);
+}
+
+.fxcarousel-slide img{
+  max-width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+  margin: 0;
+  border-radius: 0;
+}
+
+/* Points de navigation */
+.fxcarousel-nav {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.fxcarousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: background var(--t-fast), transform var(--t-fast);
+  display: block;
+}
+
+.fxcarousel-dot:hover {
+  background: var(--gold-dim);
+  transform: scale(1.25);
+}
+
+/* Responsive : réduire la hauteur des slides sur mobile */
+@media (max-width: 640px) {
+  .fxcarousel-slide img { height: 200px; }
+}

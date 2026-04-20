@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/project.css">
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1 id="project-title">Titre du projet</h1>
+      <p id="project-subtitle">Sous‑titre du projet</p>
+      <div class="rune-line">✦ ✦ ✦</div>
+    </header>
+
+    <main id="project-content">
+      <div class="section-title">Résumé</div>
+      <div class="about-card" style="margin-bottom:18px;">
+        <p id="project-short" class="muted">Résumé du projet (injection automatique depuis projects.json)</p>
+      </div>
+
+      <div class="section-title">Concept</div>
+      <div class="features-grid" style="margin-bottom:24px;">
+        <ul class="container">L'idée est que la caméra dans la scène Unity se déplace
+          en fonction de la position du visage de l'utilisateur détectée par la webcam.
+          Lorsque l'on bouge la tête d'un côté, la caméra se déplace légèrement vers le côté inverse,
+          créant ainsi une illusion de profondeur réaliste — sans aucun casque, ni marqueur.
+        </ul>
+      </div>
+      <div class="section-title">Technique</div>
+      <div class="features-grid" style="margin-bottom:24px;">
+        <ul class="container">
+          <li>Détection faciale temps réel avec <b>emguCV</b> <i>(wrapper .NET d'OpenCV)</i>.</li>
+          <li>Calcul de la position 2D du visage → translation de la caméra <i>Unity</i>.</li>
+          <li>Calibrage de la sensibilité et du seuil de détection.</li>
+          <li>Optimisation pour maintenir un framerate stable malgré le traitement vidéo.</li>
+        </ul>
+      </div>
+      <div class="section-title">Résultat</div>
+      <div class="features-grid" style="margin-bottom:24px;">
+        <ul class="container">
+          L'effet est particulièrement convaincant sur des scènes avec plusieurs plans de profondeur.<br/>
+          Le projet a été conçu pour avoir une approche bas coût  d'une sensation normalement réservée aux dispositifs VR.
+        </ul>
+      </div>
+
+      <ul class="container" style="margin-bottom:18px;">
+        Liens: 
+        <a href="https://www.youtube.com/watch?v=B_UIfFA77pk">YouTube</a> <b>·</b>
+        <a href="https://github.com/RymOUENZAR/Parallax">Github</a>
+      </ul>
+
+      <div class="section-title">Tech & outils</div>
+      <div id="project-tags" class="tech-badges" style="margin-bottom:24px;">
+        <!-- tags injectés ici -->
+      </div>
+
+      <a class="contact-link" href="../index.html">← Retour</a>
+    </main>
+
+    <footer>
+      <!-- injecté par SITE_CONFIG.footer dans scripts.js -->
+    </footer>
+  </div>
+
+  <div id="project-root" style="display:none"></div>
+  <script src="../js/config.js" defer></script>
+  <script src="../js/utils.js" defer></script>
+  <script src="../js/nav.js" defer></script>
+  <script src="../js/data.js" defer></script>
+  <script src="../js/project.js" defer></script>
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/project.css">
+</head>
+<body>
+  <div class="page">
+    <header id="project-image" style="--project-hero: url('')">
+      <h1 id="project-title">Titre du projet</h1>
+      <p id="project-subtitle">Sous‑titre du projet</p>
+      <div class="rune-line">✦ ✦ ✦</div>
+    </header>
+
+    <main id="project-content">
+      <div class="section-title">Résumé</div>
+      <div class="about-card" style="margin-bottom:18px;">
+        <p id="project-short" class="muted">Résumé du projet (injection automatique depuis projects.json)</p>
+      </div>
+
+      <div class="section-title">Principe</div>
+      <div class="features-grid" style="margin-bottom:24px;">
+        <ul class="container">Le raytracing simule le comportement physique de la lumière : pour chaque
+          pixel de l'image, un rayon est lancé depuis la caméra virtuelle dans la scène.
+          Lorsqu'il intersecte un objet, le moteur calcule l'éclairage, les réflexions
+          et les réfractions, puis récupère la couleur résultante.<br/>
+          Le processus est répété récursivement pour les rayons secondaires.
+        </ul>
+      </div>
+      <div class="section-title">Fonctionnalités implémentées</div>
+      <div class="features-grid" style="margin-bottom:24px;">
+        <ul class="container">
+          <li>Intersections : sphères, plans, triangles.</li>
+          <li>Modèle d'éclairage Phong (ambiant, diffus, spéculaire).</li>
+          <li>Réflexions récursives (miroirs, surfaces métalliques).</li>
+          <li>Réfractions (transparences, indice de réfraction).</li>
+          <li>Ombres douces (multiples sources lumineuses).</li>
+          <li>Optimisation par multithreading C++ : découpage de l'image en blocs traités en parallèle sur plusieurs cœurs CPU.</li>
+        </ul>
+      </div>
+      <div class="section-title">Résultats</div>
+      <div class="features-grid" style="margin-bottom:24px;">
+        <ul class="container">
+          Le moteur produit des images photoréalistes statiques à partir de scènes définies en code.<br/>
+          Les temps de rendu varient selon la complexité de la scène et le niveau de récursion.
+        </ul>
+      </div>
+
+      <ul class="container" style="margin-bottom:18px;">
+        Lien: 
+        <a href="https://github.com/RymOUENZAR/Raytracing">Github</a><br/>
+        <p style="font-size: 11px">Basé sur: 
+          <a href="https://raytracing.github.io/">Book Series</a>
+        </p>
+      </ul>
+
+      <div class="section-title">Tech & outils</div>
+      <div id="project-tags" class="tech-badges" style="margin-bottom:24px;">
+        <!-- tags injectés ici -->
+      </div>
+
+      <a class="contact-link" href="../index.html">← Retour</a>
+    </main>
+
+    <footer>
+      <!-- injecté par SITE_CONFIG.footer dans scripts.js -->
+    </footer>
+  </div>
+
+  <div id="project-root" style="display:none"></div>
+  <script src="../js/config.js" defer></script>
+  <script src="../js/utils.js" defer></script>
+  <script src="../js/nav.js" defer></script>
+  <script src="../js/data.js" defer></script>
+  <script src="../js/project.js" defer></script>
+  <script src="../js/main.js" defer></script>
+</body>
+</html>
