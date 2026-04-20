@@ -5,8 +5,8 @@
     "subtitle": "Application android de gestion de personnages pour Donjons & Dragons",
     "short": "App android de gestion de personnages pour <b>Donjons & Dragons</b> 5<sup>ème</sup> édition, avec design system et prototype Jetpack Compose, Room et traduction FR.",
     "tags": ["Kotlin","Compose","Room","Android","Base de données","Scraping","MVVM"],
-    "icon": "assets/dnd-companion/DnD-logo.png",
-    "image": "DnD-logo2.png",
+    "icon": "assets/dnd-companion/DnD-Logo.png",
+    "image": "DnD-Logo2.png",
     "year": "2026",
     "repo": "https://github.com/RymOUENZAR/DnD-Companion"
   },
