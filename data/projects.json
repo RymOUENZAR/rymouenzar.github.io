@@ -16,8 +16,8 @@
     "subtitle": "Application android de gestion de personnages pour Donjons & Dragons",
     "short": "App android de gestion de personnages pour <b>Donjons & Dragons</b> 5<sup>ème</sup> édition, avec design system et prototype Jetpack Compose, Room et traduction FR.",
     "tags": ["Kotlin","Compose","Room","Android","Base de données","Scraping","MVVM"],
-    "icon": "assets/dnd-companion/dnd-logo.png",
-    "image": "dnd-logo2.png",
+    "icon": "assets/dnd-companion/DnD-Logo.png",
+    "image": "DnD-Logo2.png",
     "year": "2026",
     "repo": "https://github.com/RymOUENZAR/DnD-Companion"
   },
@@ -28,7 +28,7 @@
     "short": "Projets réalisés à l'entreprise Albyon, spécialisée dans les expériences interactives et la réalité virtuelle.",
     "tags": ["Unity","C#","Shader Graph","CG","HLSL","Unreal Engine","C++","Blueprint","3D","Jeu","Entreprise"],
     "icon": "assets/albyon-projects/ALBYON-icon.png",
-    "image": "Albyon-logo.png",
+    "image": "ALBYON-Logo.png",
     "year": "2021 - 2023",
     "repo": ""
   },
@@ -39,7 +39,7 @@
     "short": "Projets réalisés à l'entreprise AMI (<b>Advanced Magnetic Interaction</b>).",
     "tags": ["Unity","C#","C++","Shader Graph","CG","HLSL","Visual Studio","3D","OpenCV","Réalité virtuelle","Jeu","python","API","SDK","Entreprise"],
     "icon": "assets/ami-projects/ami-logo-white.png",
-    "image": "mcq-capture.png",
+    "image": "MCQ-capture.png",
     "year": "2020 - 2021",
     "repo": ""
   },
