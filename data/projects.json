@@ -1,5 +1,16 @@
 [
   {
+    "slug": "petlife",
+    "title": "PetLife",
+    "subtitle": "Application Android de gestion d'animaux de compagnie",
+    "short": "Application native Android conçue pour centraliser toutes les informations de santé, nutrition, agenda et suivi de bien-être de vos animaux de compagnie.",
+    "tags": ["Kotlin","Compose","Room","Android","Hilt","Navigation","MVVM","Repository pattern"],
+    "icon": "assets/petlife/petlife-tmp-logo.png",
+    "image": "petlife-tmp.png",
+    "year": "2026",
+    "repo": "https://github.com/RymOUENZAR/PetLife"
+  },
+  {
     "slug": "dnd-companion",
     "title": "D&D Companion",
     "subtitle": "Application android de gestion de personnages pour Donjons & Dragons",

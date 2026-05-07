@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/project.css">
+</head>
+<body>
+  <div class="page">
+    <!-- HEADER -->
+    <header>
+      <h1 id="project-title">Titre du projet</h1>
+      <p id="project-subtitle">Sous‑titre du projet</p>
+      <div class="rune-line">✦ ✦ ✦</div>
+    </header>
+
+    <main id="project-content">
+      <div class="section-title">Résumé</div>
+      <div class="about-card" style="margin-bottom:18px;">
+        <p id="project-short" class="muted">Résumé du projet (injection automatique depuis projects.json)</p>
+      </div>
+
+      <div class="rune-line">✦ En cours de développement ✦</div>
+
+      <!-- FEATURES -->
+      <div class="section-title">Fonctionnalités</div>
+      <div class="feats-grid">
+        <div class="feat-card">
+          <div class="feat-header">
+            <div class="feat-icon">🏠</div>
+            <div class="feat-title">Accueil</div>
+          </div>
+          <ul class="feat-list">
+            <li>Carte propriétaire avec photo (persistante entre sessions)</li>
+            <li>Badge urgences sur chaque animal :
+              <br>‣ Rouge si vaccin obligatoire manquant
+              <br>‣ Ambre si soins en retard</li>
+            <li>Compteur total urgences avec wording adapté ("1 vaccin obligatoire" vs "X soins à faire")</li>
+            <li>Accès rapide :
+              <br>‣ 📅 PilePoils → popup App / Site web
+              <br>‣ 💊 Rappels → popup animaux avec soins en retard, badge rouge/ambre selon gravité
+              <br>‣ 🛡️ Assurance → popup boutons App 📱 / Site 🌐 pour chaque animal
+              <br>‣ 🚨 Urgences → écran dédié avec contacts géolocalisés</li>
+            <li>Suppression / édition animal par swipe</li>
+          </ul>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-header">
+            <div class="feat-icon">💊</div>
+            <div class="feat-title">Suivi santé</div>
+          </div>
+          <ul class="feat-list">
+            <li>Suivi préventif : Vaccins, APE, API</li>
+            <li>Recherche médicaments ANMV officielle (data.gouv.fr)</li>
+            <li>Récurrence, rappels multiples configurables et date de fin optionnelle</li>
+            <li>Date prochaine administration automatique selon le protocole</li>
+            <li>Arrêter / Reprendre un traitement</li>
+            <li>Confirmation traitement du jour (✓ / ✗)</li>
+            <li>Valeurs de référence vitales par espèce</li>
+            <li>Guide couleurs des muqueuses</li>
+            <li>Encyclopédie maladies par espèce</li>
+          </ul>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-header">
+            <div class="feat-icon">🐾</div>
+            <div class="feat-title">Profil animal</div>
+          </div>
+          <ul class="feat-list">
+            <li>Création en 3 étapes (Infos générales / Santé / Vétérinaire)</li>
+            <li>Espèce, race (liste + recherche + saisie libre), sexe, couleur, date de naissance</li>
+            <li>Assureur (liste 34 assureurs français, recherche, saisie libre)</li>
+            <li>Antécédents médicaux</li>
+            <li>Option décès (date + heure facultative)</li>
+          </ul>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-header">
+            <div class="feat-icon">⚖️</div>
+            <div class="feat-title">Courbe de poids</div>
+          </div>
+          <ul class="feat-list">
+            <li>Spline Catmull-Rom : arrondis aux pics, droite sur les portions linéaires</li>
+            <li>Zone idéale adaptée à l'âge (proportionnelle pour < 12 mois)</li>
+            <li>Ajout pesée avec date et détails</li>
+            <li>Suppression pesée avec confirmation</li>
+          </ul>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-header">
+            <div class="feat-icon">🗓️</div>
+            <div class="feat-title">Agenda</div>
+          </div>
+          <ul class="feat-list">
+            <li>Ajout / modification / suppression (swipe)</li>
+            <li>Tabs Prochains / Passés / Tous</li>
+            <li>Badges timing : Aujourd'hui (vert), Demain (ambre), Dans X j</li>
+            <li>Notifications</li>
+          </ul>
+        </div>
+        
+        <div class="feat-card">
+          <div class="feat-header">
+            <div class="feat-icon">👨‍⚕️</div>
+            <div class="feat-title">Vétérinaire</div>
+          </div>
+          <ul class="feat-list">
+            <li>Formulaire complet : prénom, nom, cabinet, adresse, téléphone, email, avec bouton appel et itinéraire</li>
+            <li>Modification du formulaire</li>
+            <li>Recherche vétérinaires à proximité</li>
+            <li>Ecran dédié pour les urgences et le service antipoison</li>
+          </ul>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-header">
+            <div class="feat-icon">🌤️</div>
+            <div class="feat-title">Météo</div>
+          </div>
+          <ul class="feat-list">
+            <li>OpenWeatherMap + géolocalisation FusedLocation</li>
+            <li>Conseils personnalisés par espèce et antécédents</li>
+            <li>Notifications</li>
+          </ul>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-header">
+            <div class="feat-icon">📁</div>
+            <div class="feat-title">Archives</div>
+          </div>
+          <ul class="feat-list">
+            <li>Ajout avec fichier joint (PDF, image)</li>
+            <li>Montant formaté 0,00€ (masqué si type ≠ Facture)</li>
+            <li>Modification / Suppression (swipe)</li>
+            <li>Écran détail complet</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section-title">Visuels</div>
+
+      <div class="carrousel-container" id="carrousel" style="width: 300px; height: 650px;">
+        <div class="carrousel-slide"><img class="nohover" style="max-width: 100%; max-height: 100%" src="../assets/petlife/capture/home-screen.png" alt="Application home screen"></div>
+        <div class="carrousel-slide"><img class="nohover" style="max-width: 100%; max-height: 100%" src="../assets/petlife/capture/pilepoils-home-screen.png" alt="Accès rapide Pilepoils"></div>
+        <div class="carrousel-slide"><img class="nohover" style="max-width: 100%; max-height: 100%" src="../assets/petlife/capture/insurance-home-screen.png" alt="Accès rapide assurances"></div>  
+        <div class="carrousel-slide"><img class="nohover" style="max-width: 100%; max-height: 100%" src="../assets/petlife/capture/emergency-screen.png" alt="Urgences"></div>
+        <div class="carrousel-slide"><img class="nohover" style="max-width: 100%; max-height: 100%" src="../assets/petlife/capture/pet-detail-screen.gif" alt="Détail de l'animal"></div>
+        <div class="carrousel-slide"><img class="nohover" style="max-width: 100%; max-height: 100%" src="../assets/petlife/capture/pet-health-screen.png" alt="Santé animal"></div>  
+        <div class="carrousel-slide"><img class="nohover" style="max-width: 100%; max-height: 100%" src="../assets/petlife/capture/pet-health-screen.gif" alt="Santé animal"></div>
+        <div class="carrousel-slide"><img class="nohover" style="max-width: 100%; max-height: 100%" src="../assets/petlife/capture/pet-nutrition-screen.gif" alt="Calcul nutrition et informations aliments"></div>
+        <div class="carrousel-slide"><img class="nohover" style="max-width: 100%; max-height: 100%" src="../assets/petlife/capture/pet-vet-screen.png" alt="Fiche vétérinaire"></div>  
+        <div class="carrousel-slide"><img class="nohover" style="max-width: 100%; max-height: 100%" src="../assets/petlife/capture/pet-weight-screen.png" alt="Informations poids"></div>
+        <div class="carrousel-slide"><img class="nohover" style="max-width: 100%; max-height: 100%" src="../assets/petlife/capture/pet-archive-detail-screen.png" alt="Archives documents (ordonnance, facture, feuille de soin...etc.)"></div>
+        <div class="carrousel-slide"><img class="nohover" style="max-width: 100%; max-height: 100%" src="../assets/petlife/capture/pet-stats-screen.png" alt="Statistiques animal"></div>
+
+        <button class="carrousel-button prev" aria-label="Précédent" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="carrousel-button next" aria-label="Suivant" onclick="plusDivs(1)">&#10095;</button>
+      </div>
+
+      <ul class="container" style="margin-bottom:18px;">
+        Lien: 
+        <a href="https://github.com/RymOUENZAR/PetLife">Github</a><br>
+        <a style="font-size: 11px;" href="https://github.com/RymOUENZAR/PetLife/releases/download/v0.0.8/Petlifeapp-debug.apk">Télécharger l'application</a>
+      </ul>
+
+      <div class="section-title">Tech & outils</div>
+      <div id="project-tags" class="tech-badges" style="margin-bottom:24px;">
+        <!-- tags injectés ici -->
+      </div>
+      
+      <a class="contact-link" href="../index.html">← Retour</a>
+    </main>
+
+    <footer>
+      <!-- injecté par SITE_CONFIG.footer dans scripts.js -->
+    </footer>
+  </div>
+
+  <div id="project-root" style="display:none"></div>
+  <script src="../js/config.js" defer></script>
+  <script src="../js/utils.js" defer></script>
+  <script src="../js/nav.js" defer></script>
+  <script src="../js/data.js" defer></script>
+  <script src="../js/project.js" defer></script>
+  <script src="../js/main.js" defer></script>
+</body>
+</html>
