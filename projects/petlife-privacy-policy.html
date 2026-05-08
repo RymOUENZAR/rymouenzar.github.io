@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Politique de confidentialité — PetLife</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #FAFAF8;
+    --surface: #FFFFFF;
+    --text: #1A1A18;
+    --muted: #6B6B66;
+    --border: #E8E8E2;
+    --accent: #3D7A5E;
+    --accent-light: #EAF3EE;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 16px;
+    min-height: 100vh;
+  }
+
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 2rem 0;
+    background: var(--surface);
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .logo-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--accent);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+
+  .logo-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    color: var(--text);
+  }
+
+  .hero {
+    padding: 3rem 0 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-label {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+
+  .hero-meta {
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  .content {
+    padding: 3rem 0 4rem;
+  }
+
+  .summary-box {
+    background: var(--accent-light);
+    border: 1px solid #C5DDD3;
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2.5rem;
+    font-size: 15px;
+    color: #2A5C44;
+    line-height: 1.6;
+  }
+
+  .summary-box strong {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 6px;
+    font-size: 14px;
+    letter-spacing: 0.03em;
+  }
+
+  section {
+    margin-bottom: 2.5rem;
+  }
+
+  .section-number {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+
+  h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+
+  p {
+    color: #3A3A36;
+    font-size: 15px;
+    margin-bottom: 10px;
+    line-height: 1.75;
+  }
+
+  ul {
+    list-style: none;
+    margin: 10px 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 15px;
+    color: #3A3A36;
+    line-height: 1.6;
+  }
+
+  li::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+    margin-top: 8px;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2.5rem 0;
+  }
+
+  .table-wrap {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 12px 0;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  thead tr {
+    background: #F3F3EF;
+  }
+
+  th {
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 500;
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  td {
+    padding: 10px 14px;
+    border-top: 1px solid var(--border);
+    color: #3A3A36;
+    vertical-align: top;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+
+  .tag-green { background: #EAF3EE; color: #2A5C44; }
+  .tag-red { background: #FCEBEB; color: #791F1F; }
+
+  .tag-blue { background: #E6F1FB; color: #0C447C; }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem 0;
+    background: var(--surface);
+  }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer-inner p {
+    font-size: 13px;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 28px; }
+    .footer-inner { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <a class="logo" href="#">
+      <div class="logo-icon">🐾</div>
+      <span class="logo-name">PetLife</span>
+    </a>
+  </div>
+</header>
+
+<div class="container">
+  <div class="hero">
+    <div class="hero-label">Transparence & confiance</div>
+    <h1>Politique de confidentialité</h1>
+    <p class="hero-meta">Dernière mise à jour : mai 2026 &nbsp;·&nbsp; Développée par Rym Ouenzar</p>
+  </div>
+
+  <div class="content">
+
+    <div class="summary-box">
+      <strong>En bref</strong>
+      Toutes vos données restent sur votre appareil. Je n'y ai pas accès, je ne les exploite pas et je ne les partage avec personne. L'application contacte quelques services externes uniquement pour vous fournir certaines fonctionnalités (météo, carte), sans jamais leur transmettre vos informations personnelles.
+    </div>
+
+    <section>
+      <div class="section-number">Section 1</div>
+      <h2>Qui suis-je ?</h2>
+      <p>PetLife est une application Android développée par Rym Ouenzar, développeuse indépendante basée en France. L'application a pour vocation d'aider les propriétaires d'animaux à centraliser le suivi santé, les rappels et les documents de leurs compagnons. Elle n'est rattachée à aucune entreprise commerciale.</p>
+    </section>
+
+    <hr class="divider">
+
+    <section>
+      <div class="section-number">Section 2</div>
+      <h2>Données collectées</h2>
+      <p>Tout ce que vous saisissez dans PetLife — profil de vos animaux, suivi santé, rendez-vous, documents, photos — est enregistré <strong>uniquement en local</strong> dans la base de données de votre téléphone. Ces données ne me sont pas accessibles, ne transitent sur aucun serveur et ne me sont jamais transmises.
+        <br>
+        Si vous désinstallez l'application, toutes les données sont définitivement supprimées de votre appareil.</p>
+    </section>
+
+    <hr class="divider">
+
+    <section>
+      <div class="section-number">Section 3</div>
+      <h2>Services externes utilisés</h2>
+      <p>Certaines fonctionnalités nécessitent de contacter des services tiers sur Internet. Ces appels sont purement techniques : ils ne transmettent aucune information personnelle vous concernant, et les réponses ne sont pas conservées au-delà de l'affichage.</p>
+ 
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Fonctionnalité</th>
+              <th>Ce qui est envoyé</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>OpenWeatherMap</td>
+              <td>Météo locale</td>
+              <td><span class="tag tag-blue">Coordonnées GPS approximatives</span></td>
+            </tr>
+            <tr>
+              <td>OpenStreetMap / Overpass</td>
+              <td>Recherche de vétérinaires à proximité</td>
+              <td><span class="tag tag-blue">Coordonnées GPS approximatives</span></td>
+            </tr>
+            <tr>
+              <td>Nominatim (OSM)</td>
+              <td>Autocomplétion d'adresses</td>
+              <td><span class="tag tag-blue">Texte saisi dans le champ adresse</span></td>
+            </tr>
+            <tr>
+              <td>ANMV / data.gouv.fr</td>
+              <td>Base de médicaments vétérinaires</td>
+              <td><span class="tag tag-green">Aucune donnée personnelle</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+ 
+      <p>Les coordonnées GPS ne sont utilisées qu'au moment de la requête et ne sont associées à <strong>aucune identité</strong>. Aucun de ces services ne reçoit votre nom, vos données animales, ni aucune information personnelle saisie dans l'application.</p>
+      <p>Ces services sont soumis à leurs propres politiques de confidentialité, disponibles sur leurs sites respectifs.</p>
+    </section>
+
+    <hr class="divider">
+
+    <section>
+      <div class="section-number">Section 4</div>
+      <h2>Permissions demandées</h2>
+      <p>L'application peut demander accès aux fonctionnalités suivantes de votre appareil, uniquement lorsqu'elles sont nécessaires à une action que vous initiez :</p>
+
+      <ul>
+        <li><strong>Localisation</strong> — pour la météo locale et la recherche de vétérinaires à proximité. Non utilisée en arrière-plan.</li>
+        <li><strong>Médias et stockage</strong> — pour ajouter des photos de profil ou joindre des documents aux archives. Tout reste en local.</li>
+        <li><strong>Notifications</strong> — pour envoyer des rappels de soins et de rendez-vous, uniquement si vous les activez.</li>
+      </ul>
+    </section>
+
+    <hr class="divider">
+
+    <section>
+      <div class="section-number">Section 5</div>
+      <h2>Publicité, tracking et monétisation</h2>
+      <p>PetLife ne contient <strong>aucune publicité</strong> et n'intègre <strong>aucun outil de suivi</strong> comportemental ou d'analyse d'audience. L'application n'est pas monétisée et vos données <strong>ne sont pas exploitées</strong> à des fins commerciales.</p>
+    </section>
+
+    <hr class="divider">
+
+    <section>
+      <div class="section-number">Section 6</div>
+      <h2>Vos droits</h2>
+      <p>Conformément au Règlement Général sur la Protection des Données, vous disposez des droits suivants :</p>
+
+      <ul>
+        <li><strong>Accès et rectification</strong> — toutes vos données sont consultables et modifiables directement dans l'application.</li>
+        <li><strong>Effacement</strong> — vous pouvez supprimer chaque entrée depuis l'application, ou effacer l'ensemble en la désinstallant.</li>
+        <li><strong>Portabilité</strong> — une fonctionnalité d'export est prévue dans une version future.</li>
+      </ul>
+    </section>
+
+    <hr class="divider">
+
+    <section>
+      <div class="section-number">Section 7</div>
+      <h2>Évolutions de cette politique</h2>
+      <p>Cette politique sera mise à jour si de nouvelles fonctionnalités impliquent un changement dans la gestion des données. La date en haut de cette page indique la version en vigueur.</p>
+    </section>
+
+    <hr class="divider">
+
+    <section>
+      <div class="section-number">Section 8</div>
+      <h2>Nous contacter</h2>
+      <p>Pour toute question relative à cette politique ou à vos données :</p>
+      <ul>
+        <li>Par email : <a href="mailto:rymouenzar.dev@gmail.com">rymouenzar.dev@gmail.com</a></li>
+        <li>Via GitHub : <a href="https://github.com/RymOUENZAR/PetLife" target="_blank">github.com/RymOUENZAR/PetLife</a></li>
+      </ul>
+    </section>
+
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <p>© 2026 PetLife · Rym Ouenzar</p>
+      <p>Toutes les données restent sur votre appareil 🐾</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
